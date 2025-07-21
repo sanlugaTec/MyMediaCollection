@@ -1,2 +1,2 @@
-###### Ejercicio base de aprendizaje de WinUI
+# Ejercicio base de aprendizaje de WinUI
 Incluye clases de datos estáticos
