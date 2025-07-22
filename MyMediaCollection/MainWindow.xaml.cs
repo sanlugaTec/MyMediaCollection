@@ -32,10 +32,15 @@ namespace MyMediaCollection
         public MainWindow()
         {
             InitializeComponent();
-
-            PopulateData();
+            ItemList.Loaded += ItemList_Loaded;
         }
-    
+
+        private void ItemList_Loaded(object sender, RoutedEventArgs e)
+        {
+            var listView = sender as ListView;
+            PopulateData();
+            listView.ItemsSource = _items;
+        }
 
         public void PopulateData()
         {
@@ -49,7 +54,7 @@ namespace MyMediaCollection
                     MediumInfo = new Medium
                     {
                         Id = 1,
-                        Name = "CD de Música",
+                        Name = "CD",
                         MediaType = ItemType.Music
                     }
                 };
@@ -75,7 +80,7 @@ namespace MyMediaCollection
                     MediumInfo = new Medium
                     {
                         Id = 1,
-                        Name = "Video en Bluray",
+                        Name = "DVD",
                         MediaType = ItemType.Video
                     }
                 };
